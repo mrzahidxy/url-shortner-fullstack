@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+h2 {
+  color: #444;
+}
+
+/* URL Shortener Styles */
+.url-shortener {
+  min-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  gap: 10px; /* Adds space between input and button */
+  margin-bottom: 10px;
+}
+
+input[type="url"],
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="url"]:focus,
+input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+/* Button Styles */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02); /* Adds a subtle hover effect */
+}
+
+/* Result Section */
+.result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+.result p {
+  margin: 0 0 5px;
+  font-weight: bold;
+}
+
+.result a {
+  color: #007bff;
+  word-break: break-word; /* Prevents links from overflowing */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.result a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Error Message */
+.error {
+  color: #dc3545;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.copyright{
+  text-align: right;
+  margin-top: 20px;
+  font-size: small;
+}
