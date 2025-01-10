@@ -14,10 +14,10 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
-app.use("/api", shortnerRouter);
+app.use("/", shortnerRouter);
 
 // Health Check Endpoint
-app.get("/health", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.status(200).json({
     status: "UP",
     timestamp: new Date(),
