@@ -1,42 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const UrlShortener = () => {
-  const [url, setUrl] = useState('');
-  const [shortUrl, setShortUrl] = useState('');
-  const [error, setError] = useState('');
+  const [url, setUrl] = useState("");
+  const [shortUrl, setShortUrl] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
-    setShortUrl('');
+    setError("");
+    setShortUrl("");
 
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/shorten`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ url }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to shorten URL');
+        throw new Error("Failed to shorten URL");
       }
 
       const data = await response.json();
       setShortUrl(data.shortUrl);
     } catch (err) {
-      setError('An error occurred while shortening the URL');
-    }finally{
+      setError("An error occurred while shortening the URL");
+    } finally {
       setLoading(false);
     }
   };
 
   return (
     <div className="url-shortener">
-      <h2>Shorten a URL</h2>
+      <div className="header">
+        <span className="title">ByteURL, </span>
+        <span>Simplify your links</span>
+      </div>
+      <span className="instruction">
+        URL must start with http:// or https://.
+      </span>
       <form onSubmit={handleSubmit}>
         <input
           type="url"
@@ -45,7 +51,9 @@ const UrlShortener = () => {
           placeholder="Enter a URL to shorten"
           required
         />
-        <button type="submit" disabled={loading}>{loading ? 'Shortening...' : 'Shorten'}</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Shortening..." : "Shorten"}
+        </button>
       </form>
       {shortUrl && (
         <div className="result">
@@ -61,4 +69,3 @@ const UrlShortener = () => {
 };
 
 export default UrlShortener;
-

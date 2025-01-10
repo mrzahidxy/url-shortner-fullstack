@@ -6,8 +6,7 @@ function App() {
     <div className="app">
       <UrlShortener />
       <div className="copyright">
-        URL Shortner by{" "}
-        <a href="https://www.linkedin.com/in/mrzahidxy/">Zahid</a>
+        ByteURL by <a href="https://www.linkedin.com/in/mrzahidxy/">Zahid</a>
       </div>
     </div>
   );

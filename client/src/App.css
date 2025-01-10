@@ -26,18 +26,33 @@ h2 {
 
 /* URL Shortener Styles */
 .url-shortener {
-  min-width: 600px;
+  width: 30vw;
   background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 32px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #007bff;
+  font-size: 32px;
+}
+
+.instruction {
+  color: #856404;
+  background-color: #fff3cd;
+  padding: 2px 10px;
+  font-size: 12px;
+}
+
 form {
   display: flex;
-  gap: 10px; /* Adds space between input and button */
-  margin-bottom: 10px;
+  gap: 10px;
 }
 
 input[type="url"],
@@ -105,8 +120,14 @@ button:hover {
   font-weight: bold;
 }
 
-.copyright{
+.copyright {
   text-align: right;
   margin-top: 20px;
   font-size: small;
+}
+
+@media screen and (max-width: 768px) {
+  .url-shortener {
+    width: 80vw;
+  }
 }
