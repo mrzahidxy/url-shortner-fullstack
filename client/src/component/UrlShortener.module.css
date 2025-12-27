@@ -14,7 +14,7 @@
   padding: 28px;
   backdrop-filter: var(--glass);
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
@@ -367,8 +367,18 @@
     padding: 20px;
   }
 
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .themeToggle {
+    align-self: flex-start;
+  }
+
   .content {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .inputGroup {
@@ -377,5 +387,9 @@
 
   .submit {
     width: 100%;
+  }
+
+  .historyList {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
