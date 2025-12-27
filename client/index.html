@@ -4,10 +4,53 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>URL Shortener</title>
+    <title>ByteURL | Simple, fast URL shortener</title>
+    <meta
+      name="description"
+      content="ByteURL is a fast, secure URL shortener that lets you create clean links, copy instantly, and keep recent links in one place."
+    />
+    <meta
+      name="keywords"
+      content="URL shortener, short link, link management, share links, ByteURL"
+    />
+    <link rel="canonical" href="https://byteurl.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ByteURL | Simple, fast URL shortener" />
+    <meta
+      property="og:description"
+      content="Create clean, shareable links in seconds with ByteURL."
+    />
+    <meta property="og:url" content="https://byteurl.app/" />
+    <meta property="og:image" content="https://byteurl.app/favicon.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="ByteURL | Simple, fast URL shortener" />
+    <meta
+      name="twitter:description"
+      content="Create clean, shareable links in seconds with ByteURL."
+    />
+    <meta name="twitter:image" content="https://byteurl.app/favicon.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ByteURL",
+        "url": "https://byteurl.app/",
+        "description": "ByteURL is a fast, secure URL shortener to create clean links and manage recent links easily.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "ByteURL"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

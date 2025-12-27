@@ -1,0 +1,21 @@
+name: Backend CI/CD (Render)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "server/**"
+      - ".github/workflows/backend-render.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Trigger Render Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Render
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: curl -fsSL -X POST "$RENDER_DEPLOY_HOOK"

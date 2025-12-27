@@ -1,133 +1,101 @@
-/* General Styles */
+:root {
+  --page-bg: radial-gradient(circle at 20% 20%, #2c2f40 0, transparent 35%),
+    radial-gradient(circle at 80% 0%, #1a2f59 0, transparent 30%),
+    #0f172a;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-strong: rgba(255, 255, 255, 0.12);
+  --border: rgba(255, 255, 255, 0.08);
+  --text-primary: #e5e7eb;
+  --text-secondary: #cbd5e1;
+  --accent: #8b5cf6;
+  --accent-strong: #a855f7;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  --glass: blur(22px);
+}
+
+:root[data-theme="light"] {
+  --page-bg: radial-gradient(circle at 15% 20%, #c7d2fe 0, transparent 32%),
+    radial-gradient(circle at 80% 0%, #a5f3fc 0, transparent 26%),
+    linear-gradient(135deg, #eef2ff, #e0f2fe);
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-strong: rgba(255, 255, 255, 1);
+  --border: rgba(15, 23, 42, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #6366f1;
+  --accent-strong: #4f46e5;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --shadow: 0 24px 70px rgba(15, 23, 42, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
   margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+  font-family: "Inter", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--page-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+}
+
+a {
+  color: inherit;
 }
 
 .app {
-  margin: 0 auto;
-}
-
-h1 {
-  text-align: center;
-  color: #333;
-}
-
-h2 {
-  color: #444;
-}
-
-/* URL Shortener Styles */
-.url-shortener {
-  width: 30vw;
-  background-color: #fff;
-  padding: 32px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.title {
-  color: #007bff;
-  font-size: 32px;
-}
-
-.instruction {
-  color: #856404;
-  background-color: #fff3cd;
-  padding: 2px 10px;
-  font-size: 12px;
-}
-
-form {
+  min-height: 100vh;
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 16px 64px;
+  width: 100%;
+  max-width: 1600px;
+  position: relative;
 }
 
-input[type="url"],
-input[type="text"] {
-  flex-grow: 1;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 4px 0 0 4px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-input[type="url"]:focus,
-input[type="text"]:focus {
-  border-color: #007bff;
-}
-
-/* Button Styles */
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.02); /* Adds a subtle hover effect */
-}
-
-/* Result Section */
-.result {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #e9ecef;
-  border-radius: 4px;
-}
-
-.result p {
-  margin: 0 0 5px;
-  font-weight: bold;
-}
-
-.result a {
-  color: #007bff;
-  word-break: break-word; /* Prevents links from overflowing */
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.result a:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
-
-/* Error Message */
-.error {
-  color: #dc3545;
-  margin-top: 10px;
-  font-weight: bold;
+.app-inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
 .copyright {
-  text-align: right;
-  margin-top: 20px;
-  font-size: small;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  width: 100%;
+  align-self: center;
+  letter-spacing: 0.01em;
+  opacity: 0.9;
 }
 
-@media screen and (max-width: 768px) {
-  .url-shortener {
-    width: 80vw;
+.copyright a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.copyright a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.copyright a:hover {
+  color: var(--accent-strong);
+}
+
+@media (max-width: 720px) {
+  .app {
+    padding: 32px 16px 48px;
   }
 }
