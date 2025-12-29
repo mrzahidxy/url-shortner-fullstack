@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { HttpError } from "../middleware/errorHandler";
-import { env } from "../config/env";
 import {
   ErrorResponse,
   ShortCodeParams,
@@ -25,9 +24,13 @@ export const createShortUrl = async (
   }
 
   const { shortCode, isNew } = await getOrCreateShortCode(url);
-  const shortUrl = `${env.baseUrl}/${shortCode}`;
+  const baseUrl = process.env.BASE_URL;
+  if (!baseUrl) {
+    throw new HttpError(500, "BASE_URL environment variable is not set");
+  }
+  const shortUrl = `${baseUrl}/${shortCode}`;
 
-  return res.status(isNew ? 201 : 200).json({ shortUrl });
+  return res.status(isNew ? 201 : 200).json({ shortUrl, shortCode });
 };
 
 export const redirectShortUrl = async (

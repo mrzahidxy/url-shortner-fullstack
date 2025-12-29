@@ -15,7 +15,6 @@
   },
   "include": [
     "api",
-    "config",
     "controllers",
     "middleware",
     "routes",

@@ -4,6 +4,7 @@ export interface ShortenRequestBody {
 
 export interface ShortenResponse {
   shortUrl: string;
+  shortCode: string;
 }
 
 export interface ErrorResponse {

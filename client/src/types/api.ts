@@ -10,6 +10,7 @@ export interface ShortenRequestPayload {
 
 export interface ShortenSuccessResponse {
   shortUrl: string;
+  shortCode: string;
 }
 
 export interface ApiErrorResponse {
