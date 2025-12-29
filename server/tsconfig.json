@@ -13,5 +13,15 @@
     "allowSyntheticDefaultImports": true,
     "types": ["node"]
   },
-  "include": ["api", "route", "utils", "types", "env.d.ts"]
+  "include": [
+    "api",
+    "config",
+    "controllers",
+    "middleware",
+    "routes",
+    "services",
+    "utils",
+    "types",
+    "env.d.ts"
+  ]
 }
